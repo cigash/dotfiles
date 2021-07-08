@@ -54,6 +54,7 @@ ZSH_THEME="agnoster"             # Current theme
 plugins=(git)                    # Plugins to load
 
 source $ZSH/oh-my-zsh.sh
+export TERM=xterm-256color
 
 # User configuration
 
@@ -82,9 +83,11 @@ alias nf=neofetch
 alias zrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
 alias battery='acpi -ib'
+alias mp=ncmpcpp
+alias pac='sudo pacman'
+alias ls='exa -Fla --icons'
 
 # Youtube-dl {
-alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
+alias dlmp3='cd ~/Music/Music && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
-
 # }
