@@ -10,8 +10,8 @@
 #   / /___/ /_/ / / / / __/ / /_/ / /_/ / /  / /_/ / /_/ / /_/ / / / /
 #   \____/\____/_/ /_/_/ /_/\__, /\__,_/_/   \__,_/\__/_/\____/_/ /_/
 #
-#
-#==============================================================================================================================================||
+#                                                                                                                                              
+#============================================================================================================================================||__
 #==============================================================================================================================================||
 export ZSH="/home/$USER/.oh-my-zsh"
 
@@ -54,7 +54,6 @@ ZSH_THEME="agnoster"             # Current theme
 plugins=(git)                    # Plugins to load
 
 source $ZSH/oh-my-zsh.sh
-export TERM=xterm-256color
 
 # User configuration
 
@@ -83,11 +82,17 @@ alias nf=neofetch
 alias zrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
 alias battery='acpi -ib'
-alias mp=ncmpcpp
 alias pac='sudo pacman'
-alias ls='exa -Fla --icons'
 
+# MPC {
+alias play='mpc play'
+alias pause='mpc pause'
+alias prev='mpc prev'
+alias next='mpc next'
+alias stop='mpc stop'
+ 
 # Youtube-dl {
-alias dlmp3='cd ~/Music/Music && youtube-dl --extract-audio --audio-format mp3'
+alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
+
 # }
