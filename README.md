@@ -7,5 +7,6 @@ In the repo:
 * vimrc
 * zshrc
 * mpdconf
-* neofetch config
+* neofetch conf
+* ncmpcpp conf
 
