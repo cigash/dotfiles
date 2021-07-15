@@ -83,6 +83,8 @@ alias zrc='vim ~/.zshrc'
 alias src='source ~/.zshrc'
 alias battery='acpi -ib'
 alias pac='sudo pacman'
+alias ls='exa -Fla --icons --color-scale'
+alias cm='cmatrix -a'
 
 # MPC {
 alias play='mpc play'
