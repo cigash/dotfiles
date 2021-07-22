@@ -34,8 +34,5 @@ set laststatus=2 "Make the statusline plugin work properly
 let g:lightline = {
       \ 'colorscheme': 'wombat', 
       \ }
-<<<<<<< HEAD
 "Available colorschemes: powerline(default); wombat;  solarized(light/dark);
 "papercolor(light/dark); one(light/dark).
-=======
->>>>>>> 2bab5d25d2964d05366ddd0f8e9bd62a39d0be2b
