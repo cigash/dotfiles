@@ -10,7 +10,7 @@
 #   / /___/ /_/ / / / / __/ / /_/ / /_/ / /  / /_/ / /_/ / /_/ / / / /
 #   \____/\____/_/ /_/_/ /_/\__, /\__,_/_/   \__,_/\__/_/\____/_/ /_/
 #
-#                                                                                                                                              
+#
 #============================================================================================================================================||__
 #==============================================================================================================================================||
 export ZSH="/home/$USER/.oh-my-zsh"
@@ -66,6 +66,16 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 
+alias cls=clear
+alias nf=neofetch
+alias zrc='vim ~/.zshrc'
+alias src='source ~/.zshrc'
+alias battery='acpi -ib'
+alias pac='sudo pacman'
+alias ls='exa -UFlum --icons --color-scale'
+alias cm='cmatrix -a'
+alias cm='cmatrix -a'
+
 # Apt {
 alias upgradable='apt list --upgradable'
 alias install='sudo apt install'
@@ -77,28 +87,15 @@ alias upgrade='sudo apt upgrade'
 alias fullupg='sudo apt update && sudo apt upgrade'
 # }
 
-alias cls=clear
-alias nf=neofetch
-alias zrc='vim ~/.zshrc'
-alias src='source ~/.zshrc'
-alias battery='acpi -ib'
-alias pac='sudo pacman'
-<<<<<<< HEAD
-alias ls='exa -UFlum --icons --color-scale'
-=======
-alias ls='exa -Fla --icons --color-scale'
-alias cm='cmatrix -a'
->>>>>>> 998c81121b69a63665eea9bb1c16096404e07afd
-
 # MPC {
 alias play='mpc play'
 alias pause='mpc pause'
 alias prev='mpc prev'
 alias next='mpc next'
 alias stop='mpc stop'
- 
+# }
+
 # Youtube-dl {
 alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
-
 # }
