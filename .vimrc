@@ -11,9 +11,14 @@ set ic                  "Ignore case when searching a file
 set nu                  "Show line numbers
 set noshowmode          "Disable the mode indicator
 
+colorscheme monokai
+"Avialable colorschemes: 
+"monokai
+
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/surround.vim'
 call plug#end()
 
 " Use HJKL to switch between panes
@@ -25,3 +30,8 @@ map <C-l> <C-W>l
 :command NT NERDTree
 
 set laststatus=2 "Make the statusline plugin work properly
+
+"Set lightline colorscheme
+let g:lightline = {
+      \ 'colorscheme': 'wombat', 
+      \ }
