@@ -11,6 +11,9 @@ set ic                  "Ignore case when searching a file
 set nu                  "Show line numbers
 set noshowmode          "Disable the mode indicator
 
+colorscheme monokai
+"Available colorschemes: monokai
+
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
@@ -25,3 +28,10 @@ map <C-l> <C-W>l
 :command NT NERDTree
 
 set laststatus=2 "Make the statusline plugin work properly
+
+"Set lightline colorscheme
+let g:lightline = {
+      \ 'colorscheme': 'wombat', 
+      \ }
+"Available colorschemes: powerline(default); wombat;  solarized(light/dark);
+"papercolor(light/dark); one(light/dark).

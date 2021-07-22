@@ -69,6 +69,7 @@ source $ZSH/oh-my-zsh.sh
 alias cls=clear
 alias nf=neofetch
 alias zrc='vim ~/.zshrc'
+alias vrc='vim .vimrc'
 alias src='source ~/.zshrc'
 alias battery='acpi -ib'
 alias pac='sudo pacman'
