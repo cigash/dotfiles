@@ -12,11 +12,17 @@ set nu                  "Show line numbers
 set noshowmode          "Disable the mode indicator
 
 colorscheme monokai
+<<<<<<< HEAD
 "Available colorschemes: monokai
+=======
+"Avialable colorschemes: 
+"monokai
+>>>>>>> 2bab5d25d2964d05366ddd0f8e9bd62a39d0be2b
 
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/surround.vim'
 call plug#end()
 
 " Use HJKL to switch between panes
@@ -33,5 +39,8 @@ set laststatus=2 "Make the statusline plugin work properly
 let g:lightline = {
       \ 'colorscheme': 'wombat', 
       \ }
+<<<<<<< HEAD
 "Available colorschemes: powerline(default); wombat;  solarized(light/dark);
 "papercolor(light/dark); one(light/dark).
+=======
+>>>>>>> 2bab5d25d2964d05366ddd0f8e9bd62a39d0be2b
