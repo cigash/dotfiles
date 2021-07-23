@@ -12,8 +12,7 @@ set nu                  "Show line numbers
 set noshowmode          "Disable the mode indicator
 
 colorscheme monokai
-"Avialable colorschemes: 
-"monokai
+"Available colorschemes: monokai 
 
 call plug#begin()
 Plug 'preservim/nerdtree'
@@ -35,3 +34,5 @@ set laststatus=2 "Make the statusline plugin work properly
 let g:lightline = {
       \ 'colorscheme': 'wombat', 
       \ }
+"Available colorschemes: powerline(default); wombat;  solarized(light/dark);
+"papercolor(light/dark); one(light/dark).
