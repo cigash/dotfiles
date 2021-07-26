@@ -64,6 +64,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export STARSHIP_CONFIG=~/.config/starship/config.toml
+
 # Aliases
 
 alias cls=clear
@@ -75,7 +77,11 @@ alias battery='acpi -ib'
 alias pac='sudo pacman'
 alias ls='exa -UFlum --icons --color-scale'
 alias cm='cmatrix -a'
+alias mp=ncmpcpp
 alias cm='cmatrix -a'
+alias date='date "+%B %d, %Y | %I:%M:%S"'
+alias cat=bat
+alias du='du -h'
 
 # Apt {
 alias upgradable='apt list --upgradable'
