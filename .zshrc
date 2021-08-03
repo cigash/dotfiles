@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"             # Current theme
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git)                    # Plugins to load
+plugins=(git adb)                    # Plugins to load
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,7 +102,7 @@ alias next='mpc next'
 alias stop='mpc stop'
 #
 
-# Youtube-dl {
+# Youtube-dl
 alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
 
