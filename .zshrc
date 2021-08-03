@@ -66,8 +66,9 @@ source $ZSH/oh-my-zsh.sh
 
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 
-# Aliases
+# Aliases {
 
+#General
 alias cls=clear
 alias nf=neofetch
 alias zrc='vim ~/.zshrc'
@@ -83,26 +84,26 @@ alias date='date "+%B %d, %Y | %I:%M:%S"'
 alias cat=bat
 alias du='du -h'
 
-# Apt {
+# Apt
 alias upgradable='apt list --upgradable'
-alias install='sudo apt install'
-alias remove='sudo apt remove'
-alias purge='sudo apt purge'
+alias aptins='sudo apt install'
+alias aptrm='sudo apt remove'
+alias aptpurge='sudo apt purge'
 alias autoremove='sudo apt autoremove'
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade'
-alias fullupg='sudo apt update && sudo apt upgrade'
-# }
+alias aptupd='sudo apt update'
+alias aptupg='sudo apt upgrade'
+alias fullupg='upd && upg'
 
-# MPC {
+# MPC
 alias play='mpc play'
 alias pause='mpc pause'
 alias prev='mpc prev'
 alias next='mpc next'
 alias stop='mpc stop'
-# }
+#
 
 # Youtube-dl {
 alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
+
 # }
