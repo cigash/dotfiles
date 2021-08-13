@@ -55,6 +55,8 @@ plugins=(git adb)                    # Plugins to load
 
 source $ZSH/oh-my-zsh.sh
 
+export HISTSIZE=50 # set size for the hist file (entries).
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -64,15 +66,13 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export STARSHIP_CONFIG=~/.config/starship/config.toml
-
 # Aliases {
 
 #General
 alias cls=clear
 alias nf=neofetch
 alias zrc='vim ~/.zshrc'
-alias vrc='vim .vimrc'
+alias vrc='vim ~/.vimrc'
 alias src='source ~/.zshrc'
 alias battery='acpi -ib'
 alias pac='sudo pacman'
@@ -103,7 +103,7 @@ alias stop='mpc stop'
 #
 
 # Youtube-dl
-alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
-alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
+alias dlmp3='cd ~/Music/Music && youtube-dl --extract-audio --audio-format mp3'
+alias dlvid='cd ~/Videos/YouTube && youtube-dl -f bestvideo+bestaudio'
 
 # }
