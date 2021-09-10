@@ -13,7 +13,7 @@
 #
 #============================================================================================================================================||__
 #==============================================================================================================================================||
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh" # Path to oh-my-zsh
 
 ZSH_THEME="agnoster"             # Current theme
 
@@ -23,8 +23,7 @@ ZSH_THEME="agnoster"             # Current theme
 
 # HYPHEN_INSENSITIVE="true"      # Hyphen-insensitive completion (disable above first)
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+  DISABLE_AUTO_UPDATE="true"       # Disable auto updates
 
 # DISABLE_UPDATE_PROMPT="true"   # Update without prompting
 
@@ -55,7 +54,9 @@ plugins=(git adb)                    # Plugins to load
 
 source $ZSH/oh-my-zsh.sh
 
-export HISTSIZE=50 # set size for the hist file (entries).
+# Exports {
+export $EDITOR vim
+# }
 
 # User configuration
 
@@ -63,47 +64,54 @@ export HISTSIZE=50 # set size for the hist file (entries).
 
 # export LANG=en_US.UTF-8
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
-# Aliases {
+##===Aliases===##
 
-#General
+# Edit my dotfiles {
+alias zshrc='$EDITOR ~/.zshrc'
+alias vimrc='$EDITOR ~/.vimrc'
+# }
+
+# Replacing some common coreutils with their rust replacements {
+alias ls='exa -UFlum --icons --color-scale'
+alias cat=bat
+# }
+
+
 alias cls=clear
 alias nf=neofetch
-alias zrc='vim ~/.zshrc'
-alias vrc='vim ~/.vimrc'
 alias src='source ~/.zshrc'
 alias battery='acpi -ib'
-alias pac='sudo pacman'
-alias ls='exa -UFlum --icons --color-scale'
 alias cm='cmatrix -a'
-alias mp=ncmpcpp
-alias cm='cmatrix -a'
-alias date='date "+%B %d, %Y | %I:%M:%S"'
-alias cat=bat
-alias du='du -h'
+alias gl=glances
 
-# Apt
+# Pacman {
+alias pac=pacman
+alias spac='sudo pacman'
+# }
+
+# Apt {
 alias upgradable='apt list --upgradable'
 alias aptins='sudo apt install'
+alias aptsearch='sudo apt search'
 alias aptrm='sudo apt remove'
-alias aptpurge='sudo apt purge'
-alias autoremove='sudo apt autoremove'
+alias aptprg='sudo apt purge'
+alias aptautorm='sudo apt autoremove'
 alias aptupd='sudo apt update'
 alias aptupg='sudo apt upgrade'
-alias fullupg='upd && upg'
+alias updupg='sudo apt update && sudo apt upgrade'
+# }
 
-# MPC
+# MPC {
 alias play='mpc play'
 alias pause='mpc pause'
 alias prev='mpc prev'
 alias next='mpc next'
 alias stop='mpc stop'
-#
-
-# Youtube-dl
-alias dlmp3='cd ~/Music/Music && youtube-dl --extract-audio --audio-format mp3'
-alias dlvid='cd ~/Videos/YouTube && youtube-dl -f bestvideo+bestaudio'
-
 # }
+
+# Youtube-dl {
+alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
+alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
+# }
+
