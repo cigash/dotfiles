@@ -15,17 +15,19 @@
 #==============================================================================================================================================||
 export ZSH="/home/$USER/.oh-my-zsh" # Path to oh-my-zsh
 
-ZSH_THEME="agnoster"             # Current theme
+ZSH_THEME="agnoster"                # Current theme
+
+bindkey -v                          # Enable vi mode
 
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# CASE_SENSITIVE="true"          # Case-sensitive completion
+# CASE_SENSITIVE="true"             # Case-sensitive completion
 
-# HYPHEN_INSENSITIVE="true"      # Hyphen-insensitive completion (disable above first)
+# HYPHEN_INSENSITIVE="true"         # Hyphen-insensitive completion (disable above first)
 
-  DISABLE_AUTO_UPDATE="true"       # Disable auto updates
+DISABLE_AUTO_UPDATE="true"          # Disable automatic updates
 
-# DISABLE_UPDATE_PROMPT="true"   # Update without prompting
+# DISABLE_UPDATE_PROMPT="true"      # Update without prompting
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -33,11 +35,11 @@ ZSH_THEME="agnoster"             # Current theme
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-# DISABLE_LS_COLORS="true"       # 'ls' command color highlighting
+# DISABLE_LS_COLORS="true"         # ls color highlighting
 
-# DISABLE_AUTO_TITLE="true"      # Auto-set terminal title
+# DISABLE_AUTO_TITLE="true"        # Auto-set terminal title
 
-# ENABLE_CORRECTION="true"       # Command auto-correction
+# ENABLE_CORRECTION="true"         # Command auto-correction
 
 # COMPLETION_WAITING_DOTS="true" # Red dots while waiting for completion
 
@@ -47,22 +49,15 @@ ZSH_THEME="agnoster"             # Current theme
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-plugins=(git adb)                    # Plugins to load
+plugins=(git adb vi-mode)                    # Plugins to load
 
 source $ZSH/oh-my-zsh.sh
 
 # Exports {
 export $EDITOR vim
+
 # }
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# export LANG=en_US.UTF-8
 
 
 ##===Aliases===##
@@ -73,7 +68,7 @@ alias vimrc='$EDITOR ~/.vimrc'
 # }
 
 # Replacing some common coreutils with their rust replacements {
-alias ls='exa -UFlum --icons --color-scale'
+alias ls='exa -UFluma --icons --color-scale'
 alias cat=bat
 # }
 
