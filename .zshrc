@@ -54,8 +54,8 @@ plugins=(git adb vi-mode)                    # Plugins to load
 source $ZSH/oh-my-zsh.sh
 
 # Exports {
-export $EDITOR vim
-
+export EDITOR=vim
+export VISUAL=$EDITOR
 # }
 
 
@@ -63,8 +63,8 @@ export $EDITOR vim
 ##===Aliases===##
 
 # Edit my dotfiles {
-alias zshrc='$EDITOR ~/.zshrc'
-alias vimrc='$EDITOR ~/.vimrc'
+alias zrc='$EDITOR ~/.zshrc'
+alias vrc='$EDITOR ~/.vimrc'
 # }
 
 # Replacing some common coreutils with their rust replacements {
@@ -79,6 +79,7 @@ alias src='source ~/.zshrc'
 alias battery='acpi -ib'
 alias cm='cmatrix -a'
 alias gl=glances
+alias mp=ncmpcpp
 
 # Pacman {
 alias pac=pacman
@@ -106,7 +107,7 @@ alias stop='mpc stop'
 # }
 
 # Youtube-dl {
-alias dlmp3='cd ~/Music && youtube-dl --extract-audio --audio-format mp3'
+alias dlmp3='cd ~/Music/Music && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
 # }
 
