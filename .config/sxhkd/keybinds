@@ -1,0 +1,38 @@
+
+##=== Applications ===##
+
+# Terminal emulator [alacritty]
+super + return
+
+# Run launcher [rofi]
+super + space
+
+# Browser [firefox]
+alt + w
+
+GUI file manager [pcmanfm]
+# alt + f
+
+# Telegram
+alt + t
+
+
+
+##=== Everything else system ===##
+
+# MPD Conrols (MPC)
+ctrl + 8 9 0 [prev, play/pause, next]
+
+# Lock screen
+alt + l
+
+# Reload sxhkd
+super + esc
+
+# quit/restart sxhkd
+super + shift + q|r
+
+# Close/kill
+super + x | shift + super + x
+
+
