@@ -23,6 +23,10 @@ alt + f
 alt + t
   telegram-desktop
 
+# Editor
+alt + e
+  emacs
+
 
 #MPD Controls (MPC)
 control + {8,9,0}
