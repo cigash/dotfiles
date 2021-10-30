@@ -24,7 +24,11 @@ module-underline-t3 = #ffc145
 module-underline-t4 = #c008d8 
 module-underline-t5 = #55aa55
 module-underline-t6 = #e9ff46
-module-underline-t7 = #0a6cf5
+module-underline-t7 = #0a6cf5 
+module-underline-t8 = 
+module-underline-t9 =
+
+; t0 =  
 ; t1 = pink
 ; t2 = 
 ; t3 = orange
@@ -42,7 +46,6 @@ width = 100%
 height = 28
 radius = 6.0
 fixed-center = true
-
 background = ${colors.background-dark}
 foreground = ${colors.foreground-dark}
 
@@ -62,9 +65,9 @@ font-0 = Hack Nerd Font:pixelsize=10
 font-1 = Iosevka:pixelsize=10
 
 modules-left = bspwm
-modules-center = mpd
-modules-right =  xbacklight pulseaudio eth wlan battery temperature xkeyboard date
-
+modules-center = date
+modules-right =  xbacklight pulseaudio eth wlan battery temperature xkeyboard
+wm-restack = bspwm
 tray-position = right
 tray-padding = 1
 ;tray-background = #0063ff
@@ -79,6 +82,37 @@ tray-padding = 1
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[bar/bottom]
+width = 100%
+height = 28
+radius = 6.0
+fixed-center = true
+bottom = true
+wm-restack = bspwm
+background = ${colors.background-dark}
+foreground = ${colors.foreground-dark}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Hack Nerd Font:pixelsize=10
+font-1 = Iosevka:pixelsize=10
+
+modules-left = mpd
+;modules-center = xwindow
+modules-right = memory
+;tray-position = right
+tray-padding = 1
 
 [module/xwindow]
 type = internal/xwindow
@@ -186,11 +220,12 @@ label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+label =  %gb_used% used (physical) | %mb_swap_used% (swap)
+;label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -200,22 +235,17 @@ format-connected = <label-connected>
 format-connected-underline = #9f78e1
 format-disconnected-underline = ${colors.module-underline-t4}
 label-connected =  直 %essid%
-format-disconnected = 睊
+format-disconnected = 直N/A
 
 [module/eth]
 type = internal/network
 interface = eno1
-interval = 3.0
-
+interval = 1.5
 format-connected-underline = ${colors.module-underline-t5}
-format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected =  %local_ip%
+label-connected =  %ifname%  %upspeed%  %downspeed%
 format-disconnected-underline = ${colors.module-underline-t5}
 label-disconnected =  N/A
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
