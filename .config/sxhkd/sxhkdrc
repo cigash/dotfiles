@@ -3,38 +3,55 @@
 # By: cigash (https://github.com/cigash)
 
 
-# Spawn a terminal
+##=== Applications (*alt) ===##
+
 super + Return
 	alacritty
 
-# Run launcher
-super + @space
+super + space
 	rofi -show run
 
-# Firefox
 alt + w
   firefox
 
-# File manager
 alt + f
   pcmanfm
 
-# Telegram
 alt + t
   telegram-desktop
 
-# Editor
 alt + e
-  emacs
+  kate
 
-# Cava
 alt + v
   alacritty -e cava
 
+alt + m
+  alacritty -e ncmpcpp
 
-#MPD Controls (MPC)
+alt + h
+  virtualbox
+
+alt + t
+  thunderbird
+
+alt + z
+  zoom
+
+alt + j
+  jelly-desktop
+
+alt + n
+  joplin-desktop
+
+
+# MPD Controls (MPC)
 control + {8,9,0}
   mpc {prev,toggle,next}
+
+# Take a screenshot (flameshot)
+Print
+  scrot -s ~/Pictures/Screenshots/screenshot-%m-%d-%Y-%T.png
 
 # PulseAudio controls
 XF86AudioRaiseVolume
