@@ -15,13 +15,13 @@ alt + w
   firefox
 
 alt + f
-  pcmanfm
+  alacritty -e ranger
 
 alt + t
   telegram-desktop
 
 alt + e
-  kate
+  emacs
 
 alt + v
   alacritty -e cava

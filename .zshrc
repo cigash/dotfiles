@@ -19,6 +19,8 @@ ZSH_THEME="agnoster"                # Current theme
 
 bindkey -v                          # Enable vi mode
 
+eval "$(starship init zsh)"         # Starship prompt       
+ 
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # CASE_SENSITIVE="true"             # Case-sensitive completion
@@ -80,11 +82,9 @@ alias battery='acpi -ib'
 alias cm='cmatrix -a'
 alias gl=glances
 alias mp=ncmpcpp
-
-# Pacman {
+alias stest=speedtest-cli
 alias pac=pacman
-alias spac='sudo pacman'
-# }
+alias pf=pfetch
 
 # Apt {
 alias upgradable='apt list --upgradable'
@@ -96,11 +96,11 @@ alias aptautorm='sudo apt autoremove'
 alias aptupd='sudo apt update'
 alias aptupg='sudo apt upgrade'
 alias updupg='sudo apt update && sudo apt upgrade'
+alias wttr='curl wttr.in'
 # }
 
 # MPC {
-alias play='mpc play'
-alias pause='mpc pause'
+alias toggle='mpc toggle'
 alias prev='mpc prev'
 alias next='mpc next'
 alias stop='mpc stop'

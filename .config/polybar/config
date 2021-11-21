@@ -11,71 +11,76 @@
 ;
 
 [colors]
-background-light = #d3d3d3
-foreground-light = #0f0f0f
- 
-background-dark  = #0f0f0f
-foreground-dark  = #d3d3d3
+;background = #0f0f0f
+background = #262626
+foreground = #d3d3d3
 
-;module underline color variables in order left>right (1=bspwm)
-module-underline-t1 = #ff07e6 
-module-underline-t2 = 
-module-underline-t3 = #ffc145
-module-underline-t4 = #c008d8 
-module-underline-t5 = #55aa55
-module-underline-t6 = #e9ff46
-module-underline-t7 = #0a6cf5 
-module-underline-t8 = 
-module-underline-t9 =
+monokai-pro-pink   = #FF6188
+monokai-pro-orange = #FC9867
+monokai-pro-yellow = #FFD866
+monokai-pro-green  = #A9DC76
+monokai-pro-blue   = #78DCE8
+monokai-pro-purple = #AB9DF2
+monokai-pro-black  = #2D2A2E
 
-; t0 =  
-; t1 = pink
-; t2 = 
-; t3 = orange
-; t4 = purple
-; t5 = green
-; t6 = yellow
-; t7 = red  
+monokai-pink   = #F92672
+monokai-orange = #FD971F
+monokai-yellow = #E6DB74
+monokai-green  = #A6E22E
+monokai-blue   = #66D9EF
+monokai-purple = #AE81DD
+monokai-black  = #272822 
 
 
+red    = #ff2226
+pink   = #F92672
+pro-pink = #FF6188
+purple = #a91eff 
+blue   = #66D9EF
 
-alert = #bd2c40
+
+module-underline-3 = #ffc145
+module-underline-4 = #c008d8 
+module-underline-5 = #55aa55
+module-underline-6 = #e9ff46
+module-underline-7 = #0a6cf5 
+module-underline-8 = 
+module-underline-9 =
+module-underline-a =
+module-underline-b =
+module-underline-c =
+module-underline-d =
+module-underline-e =
+module-underline-f = 
 
 [bar/top]
 width = 100%
 height = 28
-radius = 6.0
 fixed-center = true
-background = ${colors.background-dark}
-foreground = ${colors.foreground-dark}
-
+background = ${colors.background}
+foreground = ${colors.foreground}
 line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #00000000
-
+;line-color =
+bottom = false
 padding-left = 0
 padding-right = 0
-
 module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Hack Nerd Font:pixelsize=10
 font-1 = Iosevka:pixelsize=10
+font-3 = Material Icons:size=19
 
-modules-left = bspwm
-modules-center = date
-modules-right =  xbacklight pulseaudio eth wlan battery xkeyboard
+modules-left = bspwm xwindow
+modules-center =
+modules-right = xbacklight pulseaudio eth wlan battery xkeyboard date
 wm-restack = bspwm
-tray-position = right
+;tray-position = right
 tray-padding = 1
-;tray-background = #0063ff
+;tray-background =
 
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -86,18 +91,14 @@ cursor-scroll = ns-resize
 [bar/bottom]
 width = 100%
 height = 28
-radius = 6.0
 fixed-center = true
 bottom = true
 wm-restack = bspwm
-background = ${colors.background-dark}
-foreground = ${colors.foreground-dark}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
-
-border-size = 4
-border-color = #00000000
 
 padding-left = 1
 padding-right = 1
@@ -109,72 +110,70 @@ font-0 = Hack Nerd Font:pixelsize=10
 font-1 = Iosevka:pixelsize=10
 
 modules-left = mpd
-;modules-center = xwindow
+modules-center =
 modules-right = cpu filesystem memory
-;tray-position = right
 tray-padding = 1
+tray-position = right
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
+label-maxlen = 50
+label-underline = ${colors.monokai-yellow}
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-;format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.module-underline-t6}
-
+;format-prefix = ""
+format-prefix-foreground = ${colors.foreground}
+;format-prefix-underline = ${colors.pink}
 label-layout = %layout%
-label-layout-underline = ${colors.module-underline-t6}
-
+label-layout-underline = ${colors.blue}
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
+label-indicator-background =
 label-indicator-underline = ${colors.secondary}
+
 
 [module/filesystem]
 type = internal/fs
 interval = 5
 spacing = 4
-
 mount-0 = /
 ;mount-1 = /mnt/data
-
 label-mounted =  %mountpoint%: %used% used of %total%
 label-unmounted =  %mountpoint%: not mounted
-label-unmounted-foreground = ${colors.foreground-dark}
-label-mounted-underline = 
-label-unmounted-underline = 
+label-mounted-foreground = ${colors.foreground}
+label-unmounted-foreground = ${colors.foreground}
+;label-mounted-underline = ${colors.blue}
+;label-unmounted-underline = ${colors.blue}
+
 
 [module/bspwm]
 type = internal/bspwm
-
 label-focused = %index%
-;label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.module-underline-t1}
+label-focused-underline = ${colors.monokai-pro-pink}
 label-focused-padding = 2
-
 label-occupied = %index%
 label-occupied-padding = 2
-
 label-urgent = %index%!
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.background}
 label-urgent-padding = 2
 
 label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
+label-separator =
 
-; Separator in between workspaces
-; label-separator = |
 
 [module/mpd]
 type = internal/mpd
-format-online = <icon-stop> <icon-prev> <toggle> <icon-next> <icon-repeat> <icon-random>  <label-song>
+format-online =  <label-song> <label-time>
+label-time = %elapsed%/%total%
+format-online-underline = ${colors.monokai-purple}
 format-online-font = 1
-label-offline =
-
+label-offline =  MPD Not running
 icon-prev  = 玲
 icon-stop  = 
 icon-play  = 
@@ -182,22 +181,18 @@ icon-pause = 
 icon-next  = 怜
 icon-repeat = 凌
 icon-random = 
-label-song = %artist% - %title% [%album%]
-
+label-song = %artist% - %title%
 label-song-maxlen = 50
 label-song-ellipsis = true
-
 bar-progress-width = 10
 bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
+bar-progress-fill = -
+bar-progress-empty = -
 
 [module/xbacklight]
 type = internal/xbacklight
-
 format = <label> <bar> 
 label = 盛
-
 bar-width = 8
 bar-indicator = |
 bar-indicator-foreground = #fff
@@ -232,8 +227,8 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
-format-disconnected-underline = ${colors.module-underline-t4}
+format-connected-underline = ${colors.module-underline-4}
+format-disconnected-underline = ${colors.module-underline-4}
 label-connected =  直 %essid%
 format-disconnected = 直N/A
 
@@ -241,84 +236,73 @@ format-disconnected = 直N/A
 type = internal/network
 interface = eno1
 interval = 1.5
-format-connected-underline = ${colors.module-underline-t5}
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-underline = ${colors.module-underline-5}
 label-connected =  %ifname%  %upspeed%  %downspeed%
-format-disconnected-underline = ${colors.module-underline-t5}
+format-disconnected-underline = ${colors.module-underline-5}
 label-disconnected =  N/A
 
 [module/date]
 type = internal/date
 interval = 1
 date = "%m/%d/%Y"
-time = %r
-;format-prefix = 
-format-prefix-foreground = ${colors.foreground-dark}
-format-underline = ${colors.module-underline-t7}
-
+time = %r 
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.monokai-pro-orange}
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
 format-volume = <label-volume> <bar-volume>
-label-volume =    %percentage%
-format-volume-underline = ${colors.module-underline-t3}
-label-volume-foreground = ${root.foreground}
-
+label-volume =   %percentage%
+format-volume-underline = ${colors.module-underline-3}
+label-volume-foreground = ${colors.foreground}
 label-muted = 婢
-label-muted-foreground = ${colors.foreground-dark}
+label-muted-foreground = ${colors.foreground}
 bar-volume-width = 8
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-foreground-0 = ${colors.monokai-pink}
+bar-volume-foreground-1 = ${colors.monokai-yellow}
+bar-volume-foreground-2 = ${colors.monokai-yellow}
+bar-volume-foreground-3 = ${colors.monokai-yellow}
+bar-volume-foreground-4 = ${colors.monokai-green}
+bar-volume-foreground-5 = ${colors.monokai-green}
+bar-volume-foreground-6 = ${colors.monokai-orange}
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-dark}
+bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC
 ;full-at = 99
-
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
-
 animation-charging-0 =   
 animation-charging-1 =   
 animation-charging-2 =   
 animation-charging-3 =   
 animation-charging-4 =   
-
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
-
 animation-discharging-0 =   
 animation-discharging-1 =   
 animation-discharging-2 =   
 animation-discharging-3 =   
 animation-discharging-4 =   
-
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-
 format = <ramp> <label>
 format-underline = #f50a4d
 format-warn = <ramp> <label-warn>

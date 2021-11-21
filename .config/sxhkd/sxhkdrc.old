@@ -1,0 +1,117 @@
+##===SXHKD configuration for BSPWM===##
+
+# quit|reload bspwm
+super + shift + {q,r}
+  bspc {quit,wm -r}
+
+# Reload sxhkd
+super + shift + s
+  pkill -USR1 -x sxhkd
+
+# Close and kill
+super + x
+  bspc node -c
+
+# alternate between the tiled and monocle layout
+super + tab
+  bspc desktop -l next
+
+# Change focus
+super + {h,j,k,l}
+  bspc node -f {west,south,north,east}
+
+
+# Focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Next/Prev workspace
+super + ctrl + {Right,Left}
+	bspc node -d {next,prev} -f
+
+# Swap nodes the tree from the current nodes parent
+super + control + {Up, Down}
+  bspc node @parent -C {forward, backward}
+
+# Rotate the tree from the current nodes parent
+super + control + {Right, Left}
+  bspc node @parent --rotate {90,270}
+
+# Flip the tree from the current nodes parent
+super + control + {h,j,k,l}
+    bspc node @parent -F {vertical,horizontal,horizontal,vertical}
+
+# Toggle fullscreen
+super +f
+  crystal --fullscreen
+
+# Toggle floating
+super + o
+  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Swap window with direction
+super + shift + {h,j,k,l}
+  bspc node -s {west,south,north,east}
+
+# Cycle workspaces
+super + alt + {Left, Right}
+  crystal --focus {prev, next}
+
+# Close all receptacles
+super + shift + i
+  for win in `bspc query -N -n .leaf.\!window`; do bspc node $win -k ; done;
+
+# Insert a receptacle
+super + i; {h,j,k,l}
+  bspc node --presel-dir {west,south,north,east} -i
+
+# Move to receptacle
+super + r
+  bspreceptacle
+
+# Balance nodes
+super + e
+  bspc node @/ -B
+
+# Expand a window by moving one of its side outward
+ctrl + alt + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract a window by moving one of its side inward
+ctrl + alt + shift + {h,j,k,l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Move floating windows using the keyboard
+ctrl + alt + {Left,Right,Up,Down}
+  xdo move {-x -20, -x +20, -y -20, -y +20}
+
+# Spawn a terminal
+super + Return
+  alacritty
+
+# PulseAudio controls
+XF86AudioRaiseVolume
+  pactl set-sink-volume 1 +5%
+
+XF86AudioLowerVolume
+  pactl set-sink-volume 1 -5%
+
+XF86AudioMute
+  pactl set-sink-volume 1 0%
+
+# Run launcher
+alt + space
+  rofi -show run
+
+##===Application shortcuts===##
+
+alt + w
+  firefox
+
+alt + f 
+  dolphin
+
+alt + t
+  telegram-desktop
+
+

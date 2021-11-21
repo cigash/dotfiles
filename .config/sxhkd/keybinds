@@ -10,11 +10,16 @@ super + space
 # Browser [firefox]
 alt + w
 
-GUI file manager [pcmanfm]
-# alt + f
+# GUI file manager [pcmanfm]
+alt + f
 
 # Telegram
 alt + t
+
+# Editor [Emacs]
+alt + e
+
+
 
 
 
@@ -35,4 +40,11 @@ super + shift + q|r
 # Close/kill
 super + x | shift + super + x
 
+# Toggle layouts [tiled/monocle]
+super + m
 
+# Change window state
+super + t          # Tiled
+siper + s          # Floating
+super + f          # Fullscreen
+super + shift + t  # Pleudo
