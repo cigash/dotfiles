@@ -280,10 +280,13 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 ;full-at = 99
-format-charging = <animation-charging> <label-charging>
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <format-discarging>
+label-charging = %percentage%
+label-discharging = %percentage%
 format-charging-underline = #ffb52a
-format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+
 animation-charging-0 =   
 animation-charging-1 =   
 animation-charging-2 =   
@@ -291,11 +294,13 @@ animation-charging-3 = 
 animation-charging-4 =   
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
-animation-discharging-0 =   
-animation-discharging-1 =   
-animation-discharging-2 =   
-animation-discharging-3 =   
-animation-discharging-4 =   
+
+ramp-capacity-0 =   
+ramp-capacity-1 =   
+ramp-capacity-3 =   
+ramp-capacity-3 =   
+ramp-capacity-4 =   
+
 animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
 
