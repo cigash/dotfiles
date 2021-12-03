@@ -15,11 +15,11 @@
 #==============================================================================================================================================||
 export ZSH="/home/$USER/.oh-my-zsh" # Path to oh-my-zsh
 
-ZSH_THEME="agnoster"                # Current theme
+ZSH_THEME="robbyrussell"             # Current theme
 
 bindkey -v                          # Enable vi mode
 
-eval "$(starship init zsh)"         # Starship prompt       
+#eval "$(starship init zsh)"         # Starship prompt       
  
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -50,10 +50,12 @@ DISABLE_AUTO_UPDATE="true"          # Disable automatic updates
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-
-plugins=(git adb vi-mode)                    # Plugins to load
-
 source $ZSH/oh-my-zsh.sh
+
+
+
+plugins=(git adb vi-mode colored-man-pages command-not-found)            
+
 
 # Exports {
 export EDITOR=vim
@@ -63,11 +65,6 @@ export VISUAL=$EDITOR
 
 
 ##===Aliases===##
-
-# Edit my dotfiles {
-alias zrc='$EDITOR ~/.zshrc'
-alias vrc='$EDITOR ~/.vimrc'
-# }
 
 # Replacing some common coreutils with their rust replacements {
 alias ls='exa -UFluma --icons --color-scale'
@@ -83,8 +80,9 @@ alias cm='cmatrix -a'
 alias gl=glances
 alias mp=ncmpcpp
 alias stest=speedtest-cli
-alias pac=pacman
 alias pf=pfetch
+alias wttr='curl wttr.in'
+alias ct='cointop'
 
 # Apt {
 alias upgradable='apt list --upgradable'
@@ -96,18 +94,17 @@ alias aptautorm='sudo apt autoremove'
 alias aptupd='sudo apt update'
 alias aptupg='sudo apt upgrade'
 alias updupg='sudo apt update && sudo apt upgrade'
-alias wttr='curl wttr.in'
 # }
 
 # MPC {
-alias toggle='mpc toggle'
+alias togg='mpc toggle'
 alias prev='mpc prev'
 alias next='mpc next'
 alias stop='mpc stop'
 # }
 
 # Youtube-dl {
-alias dlmp3='cd ~/Music/Music && youtube-dl --extract-audio --audio-format mp3'
+alias dlmp3='cd ~/Music/To_be_tagged && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
 # }
 
