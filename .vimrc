@@ -1,9 +1,10 @@
+set nocompatible        "Disable Vi compatibility
 set expandtab		"Convert tabs to spaces
 set hlsearch            "Search highlighting
 set ignorecase          "Ignore case while searching
 syntax enable           "Syntax highlighing
 set ruler               "(Always) show cursor position 
-set noerrorbells        "Disable error beep
+set noerrorbells        "Disable terminal bells on errors
 set mouse=a             "Mouse support for scrolling/resizing
 set title               "Echo working filename to the window title
 set number              "Show line numbers on the sidebar   
@@ -15,12 +16,13 @@ set clipboard=unnamed   "Use system clipboard
 set noswapfile          "Disable swapfiles
 set ttyfast             "Speed up scrolling
 "set cursorline         "Cursor line highlighting
-set noshowmode          "Disable the mode indicator
+
 
 "Open new splits to right and bottom
 set splitright
 set splitbelow
 
+"autocmd vimenter * ++nested colorscheme gruvbox
 colorscheme monokai
 "Available colorschemes: monokai 
 
@@ -28,6 +30,11 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-fugitive'
+Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-polyglot'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " Use HJKL to switch between panes
@@ -38,17 +45,17 @@ map <C-l> <C-W>l
 
 ""Aliases {
 :command NT NERDTree
-" }
+:command VP PlugInstall
+"" }
 
 ""Lightline {
 
-" Make the statusline work properly {
+" Make the statusline work properly
 set laststatus=2
 
 if !has('gui_running')
   set t_Co=256
 endif
-" }
 
 "Set lightline colorscheme
 let g:lightline = {

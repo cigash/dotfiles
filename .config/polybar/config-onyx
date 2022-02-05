@@ -1,0 +1,293 @@
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+; Polybar config [Onyx]
+; By: linbows (https://github.com/linbows)
+;
+
+[colors]
+background = #bb262626
+foreground = #d3d3d3
+
+bar-background = #bb262626
+white = #d3d3d3
+
+red    = #f5223e
+pink   = #FF6188
+orange = #fd971f
+yellow = #e6db74
+green  = #62e10e
+blue   = #78dce8
+;purple = #ab9df2
+purple = #a99cf1
+gray   = #7d7d7d 
+
+
+[bar/top]
+width = 100%
+height = 28
+fixed-center = true
+background = ${colors.bar-background}
+foreground = ${colors.foreground}
+line-size = 3
+bottom = false
+padding = 1
+module-margin = 1
+
+wm-restack = bspwm
+
+font-0 = Hack Nerd Font:pixelsize=10
+font-1 = Iosevka:pixelsize=10
+font-3 = Material Icons:size=19
+
+modules-left = bspwm i3 xwindow
+modules-center =
+modules-right = xbacklight pulseaudio eth wlan battery xkeyboard date
+;tray-position = right
+tray-padding = 1
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+separator =
+
+
+
+[bar/bottom]
+width = 100%
+height = 28
+fixed-center = true
+bottom = true
+background = ${colors.bar-background}
+foreground = ${colors.foreground}
+wm-restack = bspwm
+line-size = 3
+
+padding-left = 1
+padding-right = 1
+module-margin = 1
+
+font-0 = Hack Nerd Font:pixelsize=10
+font-1 = Iosevka:pixelsize=10
+
+modules-left = mpd
+modules-center =
+modules-right = menu cpu filesystem memory
+tray-padding = 1
+tray-position = right
+enable-ipc = true
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-padding = 3
+label-maxlen = 70
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num-lock
+format-prefix-foreground = ${colors.foreground}
+;format-prefix-underline = ${colors.blue}
+label-layout = %layout%
+
+
+[module/filesystem]
+type = internal/fs
+interval = 5
+spacing = 4
+mount-0 = /
+;mount-1 = /mnt/data
+label-mounted =  %mountpoint%: %used% used of %total%
+label-unmounted =  %mountpoint%: not mounted
+label-mounted-foreground = ${colors.foreground}
+label-unmounted-foreground = ${colors.foreground}
+;label-mounted-underline = ${colors.blue}
+;label-unmounted-underline = ${colors.blue}
+
+
+[module/bspwm]
+type = internal/bspwm
+label-focused = %index%
+label-focused-background = ${colors.white}
+label-focused-foreground = ${colors.bar-background}
+label-occupied-underline = ${colors.white}
+label-focused-padding = 2
+label-occupied = %index%
+label-occupied-padding = 2
+label-urgent = %index%!
+label-urgent-foreground = ${colors.pink}
+label-urgent-padding = 2
+label-empty = %index%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+label-separator =
+
+[module/i3]
+type = internal/i3
+label-focused = %index%
+label-unfocused = %index%
+label-focused-padding = 2
+label-occupied = %index%
+index-sort = true
+label-occupied-padding = 2
+label-urgent = %index%!
+label-urgent-background = ${colors.background}
+label-urgent-padding = 2
+label-empty = %index%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+wrapping-scroll = true
+
+
+[module/mpd]
+type = internal/mpd
+format-online =  <label-song> <label-time>
+label-time = %elapsed%/%total%
+;format-online-underline = ${colors.pink}
+format-online-font = 1
+label-offline =  MPD Not running
+icon-prev  = 玲
+icon-stop  = 
+icon-play  = 
+icon-pause = 
+icon-next  = 怜
+icon-repeat = 凌
+icon-random = 
+label-song = %artist% - %title%
+label-song-maxlen = 50
+label-song-ellipsis = true
+bar-progress-width = 10
+bar-progress-indicator = |
+bar-progress-fill = -
+bar-progress-empty = -
+click-left = exec "alacritty -e vim"
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <label> <bar> 
+label = 盛
+bar-width = 8
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+;label-underline = ${colors.purple}
+label =  %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 1
+label = %gb_used%/%gb_total% [ram|swp] %gb_swap_used%/%gb_swap_total%
+;label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+format-connected = <label-connected>
+label-connected =  直 %essid%
+format-disconnected = 直 N/A
+
+[module/eth]
+type = internal/network
+interface = eno1
+interval = 1.5
+label-connected =  %ifname%
+label-disconnected =  N/A
+
+[module/date]
+type = internal/date
+interval = 1
+date = "%m/%d/%Y"
+time = %r 
+format-prefix-foreground = ${colors.foreground}
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume> <bar-volume>
+label-volume =   %percentage%
+label-volume-foreground = ${colors.foreground}
+label-muted = 婢
+label-muted-foreground = ${colors.foreground}
+bar-volume-width = 8
+bar-volume-foreground-0 = ${colors.pink}
+bar-volume-foreground-1 = ${colors.yellow}
+bar-volume-foreground-2 = ${colors.yellow}
+bar-volume-foreground-3 = ${colors.yellow}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.green}
+bar-volume-foreground-6 = ${colors.orange}
+;bar-volume-gradient = true
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+;full-at = 99
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <format-discarging>
+label-charging = %percentage%
+label-discharging = %percentage%
+format-charging-underline = #ffb52a
+format-discharging-underline = ${self.format-charging-underline}
+
+animation-charging-0 =   
+animation-charging-1 =   
+animation-charging-2 =   
+animation-charging-3 =   
+animation-charging-4 =   
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+ramp-capacity-0 =   
+ramp-capacity-1 =   
+ramp-capacity-2 =   
+ramp-capacity-3 =   
+ramp-capacity-4 =   
+
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 750
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
