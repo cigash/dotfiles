@@ -7,12 +7,12 @@ Just a place to backup my current dotfiles.
 
 #### Config files for:
 * vim
-* zsh
+* zsh (w/ oh-my-zsh)
 * mpd
 * neofetch
 * ncmpcpp
-* bcpwmrc
-* sxhkdrc
+* bspwm
+* sxhkd
 * polybar
 * alacritty
 
@@ -23,12 +23,10 @@ Just a place to backup my current dotfiles.
 * File manager: pcmanfm
 * Terminal emulator: alacritty
 * Shell: zsh
-* Text editors: vim, neovim, DOOM Emacs
+* Text editors: vim, neovim
 * Window manager: bspwm
 * Run launcher: rofi
 * Music playback: mpd, mpc, ncmpcpp
 * Lock screen: betterlockscreen
-* Downloads|torrents: youtube-dl, qbittorrent
 * Theme management: lxappearance, kvantum-qt5
-* IM|communication: telegram-desktop, discord
 * System info: neofetch

@@ -7,7 +7,7 @@
 ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 ;
 ; Polybar config [Onyx]
-; By: linbows (https://github.com/linbows)
+; By: Linbows (https://github.com/linbows)
 ;
 
 [colors]
@@ -88,7 +88,7 @@ enable-ipc = true
 type = internal/xwindow
 label = %title%
 label-padding = 3
-label-maxlen = 70
+label-maxlen = 80
 
 
 [module/xkeyboard]

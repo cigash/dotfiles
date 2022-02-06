@@ -1,6 +1,6 @@
 
 # SXHKD configuration for BSPWM
-# By: cigash (https://github.com/cigash)
+# By: Linbows (https://github.com/linbows)
 
 
 ##=== Applications (*alt) ===##
@@ -14,11 +14,14 @@ super + space
 alt + w
   firefox
 
-alt + f
+alt + b
   alacritty -e ranger
 
-alt + t
+alt + 1
   telegram-desktop
+
+alt + 2
+  discord
 
 alt + e
   emacs
@@ -32,7 +35,7 @@ alt + m
 alt + h
   virtualbox
 
-alt + t
+alt + 3
   thunderbird
 
 alt + z
@@ -41,30 +44,37 @@ alt + z
 alt + j
   jelly-desktop
 
-alt + n
-  joplin-desktop
+alt + i
+  alacritty -e vtop
+
+alt + p
+  pulseeffects
 
 
 # MPD Controls (MPC)
-control + {8,9,0}
-  mpc {prev,toggle,next}
+control + {6,7,8,9,0}
+  mpc {prev,seek -1%,toggle,seek +1%,next}
 
 # Take a screenshot (flameshot)
 Print
-  scrot -s ~/Pictures/Screenshots/screenshot-%m-%d-%Y-%T.png
+  flameshot gui -p ~/Pictures/Screenshots
+
+# Switch keyboard layouts
+super + control
+  {setxkbmap us, setxkbmap ru, setxkbmap ua}
 
 # PulseAudio controls
 XF86AudioRaiseVolume
-  pactl set-sink-volume @DEFAULT_SINK@ +1%
+  pactl set-sink-volume @DEFAULT_SINK@ +2%
 
 XF86AudioLowerVolume
-  pactl set-sink-volume @DEFAULT_SINK@ -1%
+  pactl set-sink-volume @DEFAULT_SINK@ -2%
 
 XF86AudioMute
   pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Lock screen
-alt + l
+super + q
   betterlockscreen -l
 
 # make sxhkd reload its configuration files:
