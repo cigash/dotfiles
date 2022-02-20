@@ -22,42 +22,43 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="/home/$USER/.oh-my-zsh" # Path to oh-my-zsh
+export ZSH="/home/$USER/.oh-my-zsh"      # Path to oh-my-zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"             # Current theme
+ZSH_THEME="powerlevel10k/powerlevel10k"  # Current theme
 
-bindkey -v                          # Enable vi mode
+bindkey -v                               # Enable vi mode
 
-#eval "$(starship init zsh)"         # Starship prompt       
+#eval "$(starship init zsh)"             # Starship prompt       
  
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# CASE_SENSITIVE="true"             # Case-sensitive completion
+# CASE_SENSITIVE="true"                  # Case-sensitive completion
 
-# HYPHEN_INSENSITIVE="true"         # Hyphen-insensitive completion (disable above first)
+# HYPHEN_INSENSITIVE="true"              # Hyphen-insensitive completion (disable above first)
 
-DISABLE_AUTO_UPDATE="true"          # Disable automatic updates
+DISABLE_AUTO_UPDATE="true"               # Disable automatic updates
 
-# DISABLE_UPDATE_PROMPT="true"      # Update without prompting
+# DISABLE_UPDATE_PROMPT="true"           # Update without prompting
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=7
+# export UPDATE_ZSH_DAYS=7               # How often to update (in days)
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-# DISABLE_LS_COLORS="true"         # ls color highlighting
- DISABLE_AUTO_TITLE="true"         # Auto-set terminal title
+# DISABLE_LS_COLORS="true"               # disable color highlighting in ls
 
-# ENABLE_CORRECTION="true"         # Command auto-correction
+DISABLE_AUTO_TITLE="true"                # Auto-set terminal title
 
-# COMPLETION_WAITING_DOTS="true" # Red dots while waiting for completion
+# ENABLE_CORRECTION="true"               # Command auto-correction
+
+# COMPLETION_WAITING_DOTS="true"         # Red dots while waiting for completion
 
 zbell_duration='15'
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh                # Path to oh-my-zsh
 
 plugins=(git adb vi-mode colored-man-pages command-not-found zbell)            
+
 
 
 # Exports {
@@ -73,7 +74,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Replacing some common coreutils with their rust replacements {
 alias ls='exa -UFlum --icons --color-scale'
-#alias cat=bat
+alias cat=bat
 # }
 
 
@@ -81,7 +82,7 @@ alias cls=clear
 alias nf=neofetch
 alias src='source ~/.zshrc'
 alias battery='acpi -ib'
-alias cm='cmatrix -r'
+alias cm='cmatrix -a'
 alias gl=glances
 alias mp=ncmpcpp
 alias stest=speedtest-cli
@@ -89,10 +90,34 @@ alias pf=pfetch
 alias wttr='curl wttr.in'
 alias ct='cointop'
 
+# Git {
+alias gitadd='git add'
+alias gitadda='git add.'
+alias gitstat='git status'
+alias gitcomm='git commit -m'
+alias gitdelbr='gitbranch -d'
+alias gitcout='git checkout'
+alias gitcl='git clone'
+alias gitrm='git rm'
+alias gitpl='git pull'
+alias gitpsh='gitpush'
+
+# Confirm before overwriting something {
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+# }
+
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
 
 # Apt {
 alias upgradable='apt list --upgradable'
-alias aptins='sudo apt install'
+alias aptins='sudo apt update && sudo apt install'
 alias aptsearch='sudo apt search'
 alias aptrm='sudo apt remove'
 alias aptprg='sudo apt purge'
@@ -136,6 +161,7 @@ alias mstat='mpc status'
 alias dlmp3='cd ~/Music/To_be_tagged && youtube-dl --extract-audio --audio-format mp3'
 alias dlvid='cd ~/Videos && youtube-dl -f bestvideo+bestaudio'
 # }
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
