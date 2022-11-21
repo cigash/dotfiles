@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=MPD
+Type=Application
+Comment=The music player daemon
+Terminal=false
+Exec=mpd --kill ; mpd &

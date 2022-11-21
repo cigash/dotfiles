@@ -1,5 +1,5 @@
 ## Dotfiles
-Just a place to backup my current dotfiles.
+Just a place to keep my current dotfiles.
 
 ---
 
@@ -27,6 +27,6 @@ Just a place to backup my current dotfiles.
 * Window manager: bspwm
 * Run launcher: rofi
 * Music playback: mpd, mpc, ncmpcpp
-* Lock screen: betterlockscreen
+* Lock screen: [betterlockscreen]()
 * Theme management: lxappearance, kvantum-qt5
 * System info: neofetch

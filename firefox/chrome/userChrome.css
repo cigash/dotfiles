@@ -1,0 +1,14 @@
+@import "styles/tab_loading_progress_bar.css";
+@import "styles/iconized_main_menu.css";
+@import "styles/button_effect_icon_glow.css";
+@import "styles/theme_sidebar.css";
+@import "styles/rounded_menupopups.css";
+
+
+/* Instructions:
+1: go to about:config and set toolkit.legacyUserProfileCustomizations.stylesheets to 'true';
+2: go to about:support and click 'open folder' next to your profile;
+3: place the parent folder [chrome] there and restart firefox;
+
+Enjoy!
+/*
